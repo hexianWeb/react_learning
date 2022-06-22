@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- react开发依赖 -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 使用jsx代码 需要在script使用一个属性 -->
+    <!-- jsx多个标签 最外层只能由一个 -->
+    <script type="text/babel">
+      // ReactDOM.render(渲染内容，挂载对象)
+      let message = "HELLO WORLD";
+      function btnClick() {
+        // alert("1");
+        message = "HELLO REACT";
+        render();
+      }
+      function render() {
+        ReactDOM.render(
+          <div>
+            <h2>{message}</h2>
+            <button onClick={btnClick}>改变文本</button>
+          </div>,
+          document.getElementById("app")
+        );
+      }
+      render();
+    </script>
+    <div>Header</div>
+    <div id="app">app</div>
+  </body>
+</html>
